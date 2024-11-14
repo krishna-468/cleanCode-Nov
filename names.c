@@ -1,15 +1,21 @@
 #include <stdio.h>
 
-int main() {
-	//code
-	char names[][10] = {"Bosch", "names", "bbbb", "aaa", "bcd"};
-	
-	for(int i=0; i < strlen(names); i++)
+void displayStringStartsWithLetter(char letterToVerify, char names[][10])
+{
+    for(int index=0; index < strlen(names); index++)
 	{
-	    if(names[i][0] == 'B' || names[i][0] =='b')
+	    if(names[index][0] == letterToVerify)
 	    {
-	        printf("%s\n",names[i]);
+	        printf("%s\n",names[index]);
 	    }
 	}
+}
+
+int main() {
+	//code
+	char names[][10] = {"Bosch", "names", "bbbb", "aaa", "Bcd"};
+	
+	displayStringStartsWithLetter('B',names);
+	
 	return 0;
 }
